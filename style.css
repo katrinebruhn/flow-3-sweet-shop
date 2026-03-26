@@ -1,0 +1,429 @@
+/* reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  background: #fbe5bd;
+  color: #4a3a2f;
+  font-family: sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* giver alle sektion elementer luft og centrerer dem på siden */
+section {
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* gør alle billeder responsive */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* navigation */
+header {
+  padding: 20px;
+  font-weight: bold;
+}
+
+/* navigation wrapper */
+/* lægger logo og burger menu på samme linje */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+.logo {
+  font-size: 20px;
+  color: #6fb3d2;
+}
+
+/* burger ikon */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* menu */
+/* skjult på mobil */
+.menu {
+  background: #f4a6b0;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* links i menuen */
+.menu a {
+  text-decoration: none;
+  color: #4a3a2f;
+  padding: 8px 0;
+}
+
+/* når menuen åbnes med JavaScript */
+.menu.show {
+  display: flex;
+}
+
+/* styrer hero billedet øverst på siden */
+.hero img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* carousel */
+/* container til slideshow */
+.slideshow-container {
+  max-width: 1000px;
+  margin: 0 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* hvert slide er skjult som standard */
+/* javaScript viser ét billede ad gangen */
+.slide {
+  display: none;
+}
+
+/* billeder i carousel */
+.slide img {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* pile til carousel */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* venstre pil */
+.prev {
+  left: 20px;
+}
+
+/* højre pil */
+.next {
+  right: 20px;
+}
+
+/* hover effekt på pilene */
+.prev:hover,
+.next:hover {
+  color: white;
+}
+
+/* button */
+/* centrerer bestillingssektionen */
+.order {
+  padding: 30px 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* styling af knappen */
+.order-btn {
+  display: block;
+  margin: 15px auto 0 auto;
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  background: #f4a6b0;
+  color: #4a3a2f;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.selection-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.selection-text,
+.selection-media {
+  width: 100%;
+}
+
+.selection p,
+.order p {
+  max-width: 60ch;
+}
+.selection {
+  padding: 30px 25px;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.selection h2 {
+  margin-bottom: 16px;
+}
+
+.selection p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* footer */
+/* footer ligger i kolonne på mobil */
+footer {
+  background: #fff6e8;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* links i footer */
+.footer-links a {
+  text-decoration: none;
+  display: block;
+  color: #4a3a2f;
+}
+
+/* om os + kontakt */
+/* fælles styling til overskrifter */
+h1,
+h2 {
+  margin-bottom: 14px;
+}
+
+/* styling af afsnit på om os siden og værdi sektionen */
+.content-section {
+  padding: 30px 25px;
+  max-width: 60ch;
+}
+
+.content-section p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.value-item h3 {
+  margin-bottom: 4px;
+}
+
+.value-item p {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+.contact-info {
+  margin-top: 25px;
+}
+/* lille afstand under hver kontaktoplysning */
+.contact-info p {
+  margin: 0 0 8px 0;
+}
+.contact-section {
+  flex: 1;
+}
+/* luft over åbningstider */
+.opening-hours {
+  margin-top: 30px;
+}
+.opening {
+  max-width: 220px;
+  margin: 0 auto; /* centrerer boksen */
+}
+
+.opening h2 {
+  text-align: left;
+}
+
+.opening p {
+  text-align: left;
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  /* nav */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* menuen vises vandret på desktop */
+  .menu {
+    background: none;
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  /* burgermenu skjules på desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* hero billedet bliver højere på desktop */
+  .hero {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+  }
+  /* intro + åbningstider */
+  /* de to sektioner lægges ved siden af hinanden */
+  .intro-opening {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px; /* ← vigtig */
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  /* begge kolonner får lige meget plads */
+  .intro,
+  .opening {
+    flex: 1;
+  }
+  .intro {
+    min-width: 500px;
+  }
+
+  /* footer */
+  /* footer bliver vandret på desktop */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 25px;
+  }
+  .selection-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    padding: 40px 20px;
+  }
+  .selection-text,
+  .selection-media {
+    width: 100%;
+  }
+  .selection {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    text-align: left;
+  }
+  .selection p {
+    margin: 0;
+    max-width: 60ch;
+  }
+  .slideshow-container {
+    max-width: 100%;
+    margin: 0 0 24px 0;
+  }
+
+  .order {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  .order p {
+    margin: 0 0 20px 0;
+    max-width: 45ch;
+  }
+  .selection,
+  .order {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .selection-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  /* links i footer */
+  .footer-links {
+    text-align: left;
+    margin: 20px;
+  }
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+  }
+
+  /* kontaktinformation i footer */
+  .footer-info {
+    text-align: center;
+    margin: 20px;
+  }
+
+  /* om os */
+  .about-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 40px 20px;
+  }
+
+  .about-row section {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-row.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .image-section img {
+    height: 400px;
+    object-fit: cover;
+  }
+  .content-section p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .value-item h3 {
+    margin-bottom: 5px;
+  }
+
+  .value-item p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
